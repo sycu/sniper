@@ -1,0 +1,49 @@
+default_encoding: utf-8
+delay: 10
+user_agent: Mozilla/5.0 (X11; CrOS x86_64 8172.45.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.64 Safari/537.36
+
+notifiers:
+  -
+    type: DiscordNotifier
+    params: ['https://discord.com/api/webhooks/12345678/ABCDEFGHIJK']
+  -
+    type: TerminalBellNotifier
+    params: []
+
+urls:
+  -
+    name: Morele RTX 3070
+    url: https://www.morele.net/kategoria/karty-graficzne-12/,,,,,,,,0,,,,8143O1689348/1/
+    matcher: SelectorMatcher
+    matcher_params: ['i.icon-add-to-basket']
+  -
+    name: MediaExpert RTX 3070
+    url: https://www.mediaexpert.pl/komputery-i-tablety/podzespoly-komputerowe/karty-graficzne/rodzaj-pamieci_gddr-6/ilosc-pamieci-ram_8-gb/szyna-danych-bit_256
+    matcher: SelectorMatcher
+    matcher_params: ['div.c-offerBox_addToCart']
+  -
+    name: X-Kom RTX 3070 + 3060 Ti
+    url: https://www.x-kom.pl/g-5/c/346-karty-graficzne-nvidia.html?per_page=90&f[1702][178141]=1&f[1702][186579]=1
+    matcher: SelectorMatcher
+    matcher_params: ['button[title="Dodaj do koszyka"]:not(:disabled)']
+  -
+    name: EuroAgd RTX 3070 + 3060 Ti
+    url: https://www.euro.com.pl/karty-graficzne,typ-chipsetu!geforce-rtx-3070:geforce-rtx-3060-ti.bhtml
+    matcher: SelectorMatcher
+    matcher_params: ['button.add-to-cart']
+  -
+    name: Komputronik RTX 30XX
+    url: https://www.komputronik.pl/category/1099/karty-graficzne.html?a%5B114451%5D%5B%5D=130633&filter=1&showBuyActiveOnly=1
+    matcher: CountRegexpMatcher
+    matcher_params: ['products-count="(.*)"']
+  -
+    name: Proline RTX 3070
+    url: https://proline.pl/?g=Karty+graficzne&c2=5000&stan=dostepne&c_producent-uk_ladu-graficznego=nvidia&c_chipset-model=rtx+3070
+    matcher: SelectorMatcher
+    matcher_params: ['img.ico-koszyk']
+    encoding: iso-8859-2
+  -
+    name: Allegro RTX 3070
+    url: https://allegro.pl/kategoria/podzespoly-komputerowe-karty-graficzne-260019?string=3070&stan=nowe&offerTypeBuyNow=1&vat_invoice=1&order=p&bmatch=cl-e2101-d3681-c3682-ele-1-5-0218&price_to=5000
+    matcher: SelectorMatcher
+    matcher_params: ['article:not(.carousel-item)']
