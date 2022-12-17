@@ -13,7 +13,7 @@ Currently, there are two matchers available:
 
 | Matcher            | Description                                                                               | Parameters                                              | Example                                    |
 |--------------------|-------------------------------------------------------------------------------------------|---------------------------------------------------------|--------------------------------------------|
-| CountRegexpMatcher | Uses regular expression to find number of available items in HTML                         | Regexp expression with single group for number of items | There [is\|are] (.*) products? available   |
+| CountRegexpMatcher | Uses regular expression to find number of available items in HTML                         | Regexp expression with single group for number of items | There (?:is\|are) (.*) products? available |
 | SelectorMatcher    | Uses a selector to find element on the page which indicates that the product is available | CSS Selector                                            | button[title="Add to cart"]:not(:disabled) |
 
 There are also two notifiers available:
